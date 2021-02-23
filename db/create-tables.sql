@@ -5,7 +5,7 @@ CREATE TABLE `faLinks` (
     id INT NOT NULL PRIMARY KEY,
     link TEXT NOT NULL,
     thumb TEXT NOT NULL,
-    title TEXT NOT NULL
+    title TEXT NOT NULL,
     resourceId INT NOT NULL AUTO_INCREMENT
 );
 
