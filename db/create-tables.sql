@@ -1,8 +1,6 @@
 CREATE DATABASE `identifur`;
 USE `identifur`;
 
-BEGIN TRANSACTION;
-
 CREATE TABLE `faLinks` (
     id INT NOT NULL PRIMARY KEY,
     link TEXT NOT NULL,
@@ -24,5 +22,3 @@ CREATE TABLE `suits` (
     fursonaGender TEXT,
     ownerSocial TEXT
 );
-
-COMMIT;
