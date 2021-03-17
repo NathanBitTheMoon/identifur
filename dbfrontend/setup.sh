@@ -8,6 +8,6 @@ then
     mkdir /var/www/identifur-frontend/
 fi
 
-mv -r html/* /var/www/identifur-frontend/
+cp -r html/* /var/www/identifur-frontend/
 
 systemctl reload apache2
