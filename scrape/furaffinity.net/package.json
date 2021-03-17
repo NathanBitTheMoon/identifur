@@ -4,7 +4,7 @@
   "description": "Scrape fursona data from furaffinity.net",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "raw": "node index.js"
   },
   "repository": {
     "type": "git",

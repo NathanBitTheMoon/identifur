@@ -1,6 +1,9 @@
 # scrape/furaffinity.net
 Scripts for scraping data from FurAffinity
 
+## Commands
+* `npm scrape`: Download post id, url, thumbnail, title and place into database
+
 ## Config Creds
 The `index.js` requires a configuration file to connect to a database. The file name is `mysql_login.json`. The format should follow:
 ```json
