@@ -26,12 +26,12 @@ CREATE TABLE `sqlCreds` (
     passwd TEXT NOT NULL
 );
 
-CREATE USER 'identifur-fr-root'@'localhost' IDENTIFIED BY 'root';
+CREATE USER 'identifur-fr-root'@'localhost' IDENTIFIED BY 'identifur-root-user';
 GRANT UPDATE, SELECT, DELETE ON identifur.* TO 'identifur-fr-root'@'localhost';
 FLUSH PRIVILEGES;
 
 INSERT INTO `sqlCreds` (id, uname, host, passwd)
-    VALUES (0, 'identifur-fr-root', 'localhost', 'root');
+    VALUES (0, 'identifur-fr-root', 'localhost', 'identifur-root-user');
 
 INSERT INTO `users` (uname, passwd, mysqlCreds, permModUser, promptPasswdChange)
     VALUES ('root', '4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2', 0, 1, 1);
