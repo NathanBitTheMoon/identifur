@@ -1,9 +1,22 @@
 .loginwin {
     margin: auto;
     padding: 10px;
-    width: auto;
+    width: 17%;
     height: auto;
     border: 1px solid gray;
 
     font-family: 'Open Sans', sans-serif;
+}
+
+.loginwin input[type="text"] {
+    width: 90%;
+}
+.loginwin input[type="password"] {
+    width: 90%;
+}
+.loginwin input[type="submit"] {
+    width: 40%;
+}
+.loginwin span {
+    width: 10px;
 }
