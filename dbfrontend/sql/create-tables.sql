@@ -4,11 +4,12 @@ CREATE DATABASE `identifur-frontend`;
 USE `identifur-frontend`;
 
 CREATE TABLE `users` (
-    id INT NOT NULL PRIMARY KEY,
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     uname TEXT NOT NULL,
     passwd TEXT NOT NULL,
     mysqlCreds INT NOT NULL,
-    permModUser BIT NOT NULL
+    permModUser BIT NOT NULL,
+    promptPasswdChange BIT NOT NULL
 );
 
 CREATE TABLE `auditLog` (
@@ -24,5 +25,15 @@ CREATE TABLE `sqlCreds` (
     host TEXT NOT NULL,
     passwd TEXT NOT NULL
 );
+
+CREATE USER 'identifur-fr-root'@'localhost' IDENTIFIED BY 'root';
+GRANT UPDATE, SELECT, DELETE ON identifur.* TO 'identifur-fr-root'@'localhost';
+FLUSH PRIVILEGES;
+
+INSERT INTO `sqlCreds` (id, uname, host, passwd)
+    VALUES (0, 'identifur-fr-root', 'localhost', 'root');
+
+INSERT INTO `users` (uname, passwd, mysqlCreds, permModUser, promptPasswdChange)
+    VALUES ('root', '4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2', 0, 1, 1);
 
 COMMIT;
