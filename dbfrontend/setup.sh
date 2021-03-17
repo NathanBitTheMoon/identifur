@@ -5,6 +5,8 @@ a2dissite 000-default.conf
 
 if [ -d "/var/www/identifur-frontend" ]
 then
+    echo "Directory Exists"
+else
     mkdir /var/www/identifur-frontend/
 fi
 
