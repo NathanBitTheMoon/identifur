@@ -1,0 +1,23 @@
+{
+  "name": "scrape.furaffinity.net",
+  "version": "1.0.0",
+  "description": "Scrape fursona data from furaffinity.net",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanBitTheMoon/identifur.git"
+  },
+  "author": "nbtm!",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NathanBitTheMoon/identifur/issues"
+  },
+  "homepage": "https://github.com/NathanBitTheMoon/identifur#readme",
+  "dependencies": {
+    "furaffinity-api": "^4.0.1",
+    "mysql": "^2.18.1"
+  }
+}
