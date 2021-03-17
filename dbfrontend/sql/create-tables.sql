@@ -26,6 +26,7 @@ CREATE TABLE `sqlCreds` (
     passwd TEXT NOT NULL
 );
 
+-- It is recommended that you change the root user password!!!!
 CREATE USER 'identifur-fr-root'@'localhost' IDENTIFIED BY 'identifur-root-user';
 GRANT UPDATE, SELECT, DELETE ON identifur.* TO 'identifur-fr-root'@'localhost';
 FLUSH PRIVILEGES;
