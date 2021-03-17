@@ -6,6 +6,7 @@ a2dissite 000-default.conf
 if [ -d "/var/www/identifur-frontend" ]
 then
     mkdir /var/www/identifur-frontend/
+fi
 
 mv -r html/* /var/www/identifur-frontend/
 
