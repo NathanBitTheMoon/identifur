@@ -13,7 +13,7 @@
 
         include 'php/auth_methods.php';
         $user = AuthMethods::authenticate_user($uid, $pwd);
-        echo $user; 
+        echo json_encode($user); 
 
         if ($user == null) {
             // Authentication failed
