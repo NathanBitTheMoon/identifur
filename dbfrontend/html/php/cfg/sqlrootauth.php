@@ -1,7 +1,7 @@
 <?php
 $SQLROOT = [
     "username" => "idfurferoot",
-    "password" => "k9034tuj98tfe09jyuZA",
+    "password" => "tKkvcjN/*HEhFtKXcMDEsqkbfpshSSm6rFh5wDYYKJFf8Y*CaA",
     "host" => "localhost",
     "database" => "identifur-frontend"
     ];

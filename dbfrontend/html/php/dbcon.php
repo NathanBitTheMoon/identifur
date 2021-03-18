@@ -1,5 +1,5 @@
 <?php
-    $dbconn = new mysqli("localhost", "idfurferoot", "tKkvcjN/*HEhFtKXcMDEsqkbfpshSSm6rFh5wDYYKJFf8Y*CaA", "identifur-frontend");
+    $dbconn = new mysqli($SQLROOT["host"], $SQLROOT["username"], $SQLROOT["password"], $SQLROOT["database"]);
 
     if ($dbconn->connect_error) {
         die("Connection failed: " . $dbconn->connect_error);
