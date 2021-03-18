@@ -31,7 +31,8 @@ CREATE TABLE `sqlCreds` (
 -- Don't try and "hack" my database because there are credentials here because it won't work lol
 
 CREATE USER 'idfurferoot'@'localhost' IDENTIFIED BY '_aE#t9T_bS%Fa|Rd*^I+5">v44bBDfyc7q;mFR.+?].Bw[sN^0';
-GRANT UPDATE, SELECT, DELETE ON identifur.* TO 'idfurferoot'@'localhost';
+GRANT UPDATE, SELECT, DELETE, INSERT ON `identifur-frontend`.* to 'idfurferoot'@'localhost';
+GRANT UPDATE, SELECT, DELETE, INSERT ON identifur.* TO 'idfurferoot'@'localhost';
 FLUSH PRIVILEGES;
 
 INSERT INTO `sqlCreds` (id, uname, host, passwd)
