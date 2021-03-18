@@ -1,6 +1,6 @@
 #!/bin/bash
 rm -rf /var/www/identifur-frontend/
-mv ./apache/identifur-frontend.conf /etc/apache2/sites-available/identifur-frontend.conf
+cp ./apache/identifur-frontend.conf /etc/apache2/sites-available/identifur-frontend.conf
 a2ensite identifur-frontend.conf
 a2dissite 000-default.conf
 
