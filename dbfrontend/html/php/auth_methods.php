@@ -14,12 +14,9 @@
         }
 
         static function change_password(string $user, string $new_password) {
-            error_reporting(E_ALL);
-            ini_set('display_errors', TRUE);
-            ini_set('display_startup_errors', TRUE);
             include 'dbcon.php';
             $password = hash('sha256', $new_password);
-            $sql = "UPDATE `users` SET `passwd`=$password `promptPasswdChange`=0 WHERE `uname`='$user'";
+            $sql = "UPDATE `users` SET `passwd`='$password', `promptPasswdChange`=0 WHERE `uname`='$user';";
             echo $sql;
             $result = $dbconn->query($sql);
         }

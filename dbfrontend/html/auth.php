@@ -42,7 +42,7 @@
                 if ($new_password == $new_confirm) {
                     AuthMethods::change_password($username, $new_password);
                     session_destroy();
-                    //header("Location: index.php");
+                    header("Location: index.php");
                 } else {
                     header("Location: update_password.php?reason=policy&&error=2");
                 }
