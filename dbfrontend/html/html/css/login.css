@@ -6,6 +6,7 @@
     border: 1px solid gray;
 
     font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(0deg, #ffffff, #e8e8e8);
 }
 
 .loginwin input[type="text"] {
