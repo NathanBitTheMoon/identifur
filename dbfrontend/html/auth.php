@@ -13,6 +13,7 @@
 
         include 'php/auth_methods.php';
         $user = AuthMethods::authenticate_user($uid, $pwd);
+        echo $user["uid"];
 
         if ($user == null) {
             // Authentication failed
@@ -20,7 +21,7 @@
         } else {
             $_SESSION["uid"] = $user["uid"];
             $_SESSION["auth"] = true;
-            header("Location: index.php?success=1");
+            //header("Location: index.php?success=1");
         }
     } else if (isset($_GET["update"])) {
         include 'php/auth_methods.php';
