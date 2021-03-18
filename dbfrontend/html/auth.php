@@ -21,7 +21,7 @@
         } else {
             $_SESSION["uid"] = $user["uname"];
             $_SESSION["auth"] = true;
-            //header("Location: index.php?success=1");
+            header("Location: index.php?success=1");
         }
     } else if (isset($_GET["update"])) {
         include 'php/auth_methods.php';
