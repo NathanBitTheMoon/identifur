@@ -19,7 +19,7 @@
             // Authentication failed
             header("Location: index.php?error=1");
         } else {
-            $_SESSION["uid"] = $user["uid"];
+            $_SESSION["uid"] = $user["uname"];
             $_SESSION["auth"] = true;
             //header("Location: index.php?success=1");
         }
