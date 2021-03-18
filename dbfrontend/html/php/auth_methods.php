@@ -7,7 +7,7 @@
             $result = $dbconn->query($sql);
 
             while ($row = $result->fetch_assoc()) {
-                return $row["promptPasswordChange"];
+                return $row["promptPasswdChange"];
             }
 
             die("User '$user' not found.");
