@@ -22,3 +22,11 @@
 .loginwin span {
     width: 10px;
 }
+
+.login-error {
+    background-color: #ed9f9f;
+    border: 1px solid #ba7272;
+    color: #ffffff;
+    width: 70%;
+    padding: 10px;
+}
