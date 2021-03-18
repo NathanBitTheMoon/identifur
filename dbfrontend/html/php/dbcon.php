@@ -1,4 +1,5 @@
 <?php
+    include 'cfg/sqlrootauth.php';
     $dbconn = new mysqli($SQLROOT["host"], $SQLROOT["username"], $SQLROOT["password"], $SQLROOT["database"]);
 
     if ($dbconn->connect_error) {
