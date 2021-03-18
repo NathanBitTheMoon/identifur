@@ -17,7 +17,6 @@
             include 'dbcon.php';
             $password = hash('sha256', $new_password);
             $sql = "UPDATE `users` SET `passwd`='$password', `promptPasswdChange`=0 WHERE `uname`='$user';";
-            echo $sql;
             $result = $dbconn->query($sql);
         }
 
