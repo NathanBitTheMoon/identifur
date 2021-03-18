@@ -1,6 +1,7 @@
 <?php
     class AuthMethods {
         static function check_prompt(string $user) {
+            include 'dbcon.php';
             $sql = "SELECT promptPasswdChange FROM `users` WHERE `uname`='$user';";
 
             $result = $dbconn->query($sql);
@@ -13,6 +14,7 @@
         }
 
         static function change_password(string $user, string $new_password) {
+            include 'dbcon.php';
             $password = hash('sha256', $new_password);
             $sql = "UPDATE `users` SET `passwd`=$password WHERE `uname`='$user'";
 
