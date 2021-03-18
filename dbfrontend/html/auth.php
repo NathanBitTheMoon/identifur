@@ -43,8 +43,9 @@
                     AuthMethods::change_password($username, $new_password);
                     session_destroy();
                     header("Location: index.php");
+                } else {
+                    header("Location: update_password.php?reason=policy&&error=2");
                 }
-                header("Location: update_password.php?reason=policy&&error=2");
             } else {
                 header("Location: update_password.php?reason=policy&&error=1");
             }
