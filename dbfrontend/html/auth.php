@@ -13,16 +13,20 @@
     $sql = "SELECT * FROM `users` WHERE `uname`='$uid' AND `passwd`='$pwd';";
     $result = $dbconn->query($sql);
 
-    echo $sql;
-
     $row_count = 0;
+    session_start();
     while ($row = $result->fetch_assoc()) {
         $row_count += 1;
-    }
 
-    echo "<br>$row_count";
+        $_SESSION["uid"] = $uid;
+        $_SESSION["auth"] = true;
+        
+    }
 
     if ($row_count > 0) {
         echo "<br>Authentication Successful.";
+        header("Location: index.php?success=1");
+    } else {
+        header("Location: index.php?error=1");
     }
 ?>
