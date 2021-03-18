@@ -1,6 +1,7 @@
 <?php
     include './html/login.html';
     include './php/auth_methods.php';
+    session_start();
 
     if (isset($_GET["error"])) {
         include './html/login.error.html';
