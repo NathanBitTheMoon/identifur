@@ -5,28 +5,48 @@
     error_reporting(E_ALL);
     ini_set('display_errors', TRUE);
     ini_set('display_startup_errors', TRUE);
+    
+    if (isset($_GET["login"])) {
+        $uid = $_POST["uid"];
+        $pwd = $_POST["pwd"];
+        session_start();
 
-    $uid = $_POST["uid"];
-    $pwd = $_POST["pwd"];
-    $pwd = hash('sha256', $pwd);
+        include 'php/auth_methods.php';
+        $user = AuthMethods::authenticate_user($uid, $pwd);
 
-    $sql = "SELECT * FROM `users` WHERE `uname`='$uid' AND `passwd`='$pwd';";
-    $result = $dbconn->query($sql);
-
-    $row_count = 0;
-    session_start();
-    while ($row = $result->fetch_assoc()) {
-        $row_count += 1;
-
-        $_SESSION["uid"] = $uid;
-        $_SESSION["auth"] = true;
+        if ($user == null) {
+            // Authentication failed
+            header("Location: index.php?error=1");
+        } else {
+            $_SESSION["uid"] = $user["uid"];
+            $_SESSION["auth"] = true;
+            header("Location: index.php?success=1");
+        }
+    } else if (isset($_GET["update"])) {
+        include 'php/auth_methods.php';
         
-    }
+        // Check that the user is authenticated
+        session_start();
+        if (!isset($_SESSION["auth"])) {
+            header("Location: index.php?error=1");
+        } else {
+            $username = $_SESSION["uid"];
+            $old_password = $_POST["pwd"];
+            $new_password = $_POST["newpwd"];
+            $new_confirm = $_POST["reppwd"];
 
-    if ($row_count > 0) {
-        echo "<br>Authentication Successful.";
-        header("Location: index.php?success=1");
-    } else {
-        header("Location: index.php?error=1");
+            // Check that the user entered the correct password
+            $correct_password = AuthMethods::is_correct_password($username, $old_password);
+            if($correct_password) {
+                if ($new_password == $new_confirm) {
+                    AuthMethods::change_password($username, $new_password);
+                    session_destroy();
+                    header("Location: index.php");
+                }
+                header("Location: update_password.php?reason=policy&&error=2");
+            } else {
+                header("Location: update_password.php?reason=policy&&error=1");
+            }
+        }
     }
 ?>
