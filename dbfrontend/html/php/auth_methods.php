@@ -18,7 +18,7 @@
             $password = hash('sha256', $new_password);
             $sql = "UPDATE `users` SET `passwd`=$password `promptPasswdChange`=0 WHERE `uname`='$user'";
 
-            $dbconn->query($sql);
+            $result = $dbconn->query($sql);
         }
 
         static function is_correct_password(string $user, string $password) {
